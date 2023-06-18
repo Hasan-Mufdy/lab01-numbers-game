@@ -41,7 +41,7 @@ public class Program
     {
         for(int i = 0; i < arr.Length; i++)
         {
-            Console.WriteLine("please enter a number: " + i+1 +"/" + arr.Length);
+            Console.WriteLine("please enter a number: " + (i+1) +"/" + arr.Length);
             arr[i] = Convert.ToInt32(Console.ReadLine());
         }
         return arr;
@@ -70,7 +70,7 @@ public class Program
 
         Console.WriteLine("please enter a random number between 1 and " + arr.Length);
         int randomNumber = Convert.ToInt32(Console.ReadLine());
-        product = sum * arr[randomNumber];
+        product = sum * arr[randomNumber - 1];
 
         return product;
 
@@ -85,7 +85,7 @@ public class Program
         int inputtedNumberInt = Convert.ToInt32(inputtedNumber);
         if (inputtedNumberInt == 0)
         {
-            throw new Exception("cannot divide by zero...");
+            throw new DivideByZeroException("cannot divide by zero...");
         }
         else
         {
